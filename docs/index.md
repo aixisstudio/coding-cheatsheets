@@ -56,14 +56,54 @@ Developer cheat sheets that actually get used
 | `john --wordlist=w.txt hash` | John the Ripper |
 | `shasum -a 256 file` | Checksum |
 
+## 🐳 Docker
 
-## ❓ Frequently Asked Questions
+| Command | What |
+|---|---|
+| `docker ps -a` | All containers |
+| `docker exec -it c bash` | Shell inside |
+| `docker logs -f c` | Follow logs |
+| `docker system prune -af` | Nuclear cleanup |
+| `docker stats` | Live resource usage |
+| `docker run --rm -it img` | Ephemeral container |
 
-**Where can I find developer cheat sheets?**
+## 🧵 Git advanced
 
-This repo collects the most-used Git, shell, curl, Python and security command cheat sheets.
+| Command | What |
+|---|---|
+| `git worktree add ../wt branch` | Second checkout, same repo |
+| `git cherry-pick abc123` | Take one commit |
+| `git branch -m old new` | Rename |
+| `git diff main...feature` | Three-dot = since divergence |
+| `git commit --fixup abc && git rebase -i --autosquash` | Clean history fix |
+| `git push --force-with-lease` | Safer force push |
 
+## 🔍 ripgrep superpowers
+
+| Command | What |
+|---|---|
+| `rg -t py "import pandas"` | Type-filtered search |
+| `rg -l "TODO" | wc -l` | Count files with TODOs |
+| `rg "fn\w+" -A3` | Context after match |
+| `rg --files-without-match "test"` | Files lacking something |
+
+## 📊 Regex
+
+| Pattern | Matches |
+|---|---|
+| `(?<=@)\w+` | After @ (lookbehind) |
+| `\w+@\w+\.\w+` | Emails |
+| `(\d{1,3}\.){3}\d{1,3}` | IPv4 addresses |
+| `(?=.*[A-Z])(?=.*\d).{8,}` | Password validator |
+
+## 🗄️ SQLite
+
+| Command | What |
+|---|---|
+| `.tables` | List tables |
+| `.schema tbl` | Table DDL |
+| `.mode column` | Readable output |
+| `.dump` | Export everything |
 
 ---
-
-Maintained by [aixisstudio](https://github.com/aixisstudio) — author of [Snitch](https://github.com/aixisstudio/Snitch), the open-source application firewall. See also: [all resources](https://aixisstudio.github.io).
+Maintained by [aixisstudio](https://github.com/aixisstudio).
