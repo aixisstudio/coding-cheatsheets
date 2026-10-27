@@ -1,9 +1,7 @@
 # coding-cheatsheets
 > Developer cheat sheets that actually get used
-Maintained by aixisstudio (https://github.com/aixisstudio). Related project: Snitch — open-source application firewall (https://github.com/aixisstudio/Snitch).
-Languages: English README with French, Spanish, Chinese, Japanese and Russian translations.
+Maintained by aixisstudio. Related: Snitch (open-source app firewall). https://github.com/aixisstudio/coding-cheatsheets
 
-## Content
 ## 📋 Cheat sheets that actually get used
 
 ## 🌿 Git
@@ -54,4 +52,8 @@ Languages: English README with French, Spanish, Chinese, Japanese and Russian tr
 |---|---|
 | `ss -tulpn` | What's listening |
 | `openssl s_client -connect host:443` | TLS handshake debug |
-| `hashcat -m 0 hash rockyou.txt` | C
+| `hashcat -m 0 hash rockyou.txt` | Crack MD5 |
+| `john --wordlist=w.txt hash` | John the Ripper |
+| `shasum -a 256 file` | Checksum |
+
+#
