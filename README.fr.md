@@ -4,110 +4,108 @@
 
 Des antisèches de dev qui servent vraiment
 
-_Le contenu détaillé (listes, liens, descriptions) est en anglais pour rester maintenable — les sections ci-dessous te guident._
+Les draps de chauffage qui sont utilisés
 
-## 📋 Cheat sheets that actually get used
+♪ ♪ ♪ Git
 
-## 🌿 Git
-
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `git log --oneline --graph --all` | Visualize branches |
-| `git stash && git stash pop` | Park + restore work |
-| `git reset --soft HEAD~1` | Undo last commit, keep changes |
-| `git rebase -i HEAD~3` | Rewrite last 3 commits |
-| `git bisect start` | Binary-search the bug commit |
-| `git reflog` | The undo-undo lifesaver |
-| `git clean -fd` | Remove untracked files |
+`git log --oneline --graph --all`? Visualiser les branches
+`git stash && git stash pop`?Parc + restauration
+Démonter le dernier commit, conserver les modifications
+Réécrire les 3 derniers commits
+`git bisect start`= Recherche binaire dans le commit de bogue
+Le sauveur de vie Undo-undo
+Enlever les fichiers non suivis
 
-## 🐚 Shell
+Coquille
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `cmd1 && cmd2` | Run 2 only if 1 succeeds |
-| `cmd | tee file` | Print AND save output |
-| `cmd > out 2>&1` | Redirect stderr to stdout |
-| `Ctrl-A / Ctrl-E` | Line start / end |
-| `!cmd` | Re-run last matching command |
-| `for f in *.log; do mv "$f" "$f.bak"; done` | Loop over files |
+`cmd1 && cmd2`. Exécuter 2 seulement si 1 réussit.
+Imprimer et enregistrer la sortie
+`cmd > out 2>&1`=Rediriger le stderr vers stdout=
+`Ctrl-A / Ctrl-E`=Démarrage de la ligne / fin
+Ré-exécuter la dernière commande correspondante
+Loop sur les fichiers
 
-## 🌐 curl
+La boucle
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `curl -s url | jq .` | Fetch + parse JSON |
-| `curl -X POST -d '{"a":1}' -H 'Content-Type: json'` | POST body |
-| `curl -o file url` | Download |
-| `curl -v url` | Debug the request |
-| `curl --retry 5 url` | Auto-retry |
+Rechercher + parse JSON
+`curl -X POST -d '{"a":1}' -H 'Content-Type: json'`
+Téléchargement
+`curl -v url`
+`curl --retry 5 url`: Réessayer automatiquement
 
-## 🐍 Python one-liners
+Python monoligne
 
-| Snippet | What |
+Quoi ?
 |---|---|
-| `python3 -m http.server 8000` | Instant file server |
-| `python3 -m json.tool < data.json` | Pretty-print JSON |
-| `[x*2 for x in range(10)]` | List comprehension |
-| `dict(zip(keys, vals))` | Zip to dict |
+Serveur de fichiers instantanés
+`python3 -m json.tool < data.json`? Jolie impression JSON?
+Compréhension de la liste
+`dict(zip(keys, vals))`: Zip pour dicter
 
-## 🔐 Security quickies
+Vite !
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `ss -tulpn` | What's listening |
-| `openssl s_client -connect host:443` | TLS handshake debug |
-| `hashcat -m 0 hash rockyou.txt` | Crack MD5 |
-| `john --wordlist=w.txt hash` | John the Ripper |
-| `shasum -a 256 file` | Checksum |
+Qu'est-ce qui t'écoute
+TLS poignée de main debug
+Couverture MD5
+John l'Éventreur
+`shasum -a 256 file`
 
-## 🐳 Docker
+# # # # C'est Docker
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `docker ps -a` | All containers |
-| `docker exec -it c bash` | Shell inside |
-| `docker logs -f c` | Follow logs |
-| `docker system prune -af` | Nuclear cleanup |
-| `docker stats` | Live resource usage |
-| `docker run --rm -it img` | Ephemeral container |
+Tous les conteneurs
+`docker exec -it c bash`
+`docker logs -f c`
+`docker system prune -af`
+Utilisation des ressources en direct
+Contenant éphémère
 
-## 🧵 Git advanced
+J'ai avancé Git
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `git worktree add ../wt branch` | Second checkout, same repo |
-| `git cherry-pick abc123` | Take one commit |
-| `git branch -m old new` | Rename |
-| `git diff main...feature` | Three-dot = since divergence |
-| `git commit --fixup abc && git rebase -i --autosquash` | Clean history fix |
-| `git push --force-with-lease` | Safer force push |
+Deuxième commande, même repo
+`git cherry-pick abc123`
+Renommer
+`git diff main...feature`
+`git commit --fixup abc && git rebase -i --autosquash`= Correction de l'historique propre
+Une force plus sûre
 
-## 🔍 ripgrep superpowers
+Les superpuissances
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `rg -t py "import pandas"` | Type-filtered search |
-| `rg -l "TODO" | wc -l` | Count files with TODOs |
-| `rg "fn\w+" -A3` | Context after match |
-| `rg --files-without-match "test"` | Files lacking something |
+Recherche filtrée par type
+Nombre de fichiers avec TODOS
+Contexte après match
+Fichiers manquants
 
-## 📊 Regex
+"Régex"
 
-| Pattern | Matches |
+Modèle correspondant
 |---|---|
-| `(?<=@)\w+` | After @ (lookbehind) |
-| `\w+@\w+\.\w+` | Emails |
-| `(\d{1,3}\.){3}\d{1,3}` | IPv4 addresses |
-| `(?=.*[A-Z])(?=.*\d).{8,}` | Password validator |
+Après @ (regarder)
+`\w+@\w+\.\w+`: Courriels
+Adresses IPv4
+`(?=.*[A-Z])(?=.*\d).{8,}`=Validateur de mot de passe
 
-## 🗄️ SQLite
+# # # , , SQLite
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `.tables` | List tables |
-| `.schema tbl` | Table DDL |
-| `.mode column` | Readable output |
-| `.dump` | Export everything |
+Liste des tableaux
+Tableau DDL
+Sortie lisible
+`.dump`=Exporter tout
 
 ---
 ## Contribuer
