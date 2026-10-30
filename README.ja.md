@@ -4,110 +4,108 @@
 
 本当に使われる開発者チートシート
 
-_詳細なコンテンツ（リスト・リンク・説明）は保守のため英語です。以下のセクションがガイドになります。_
+## 実際に使用したくなるチートシート
 
-## 📋 Cheat sheets that actually get used
+## 🌿  
 
-## 🌿 Git
-
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `git log --oneline --graph --all` | Visualize branches |
-| `git stash && git stash pop` | Park + restore work |
-| `git reset --soft HEAD~1` | Undo last commit, keep changes |
-| `git rebase -i HEAD~3` | Rewrite last 3 commits |
-| `git bisect start` | Binary-search the bug commit |
-| `git reflog` | The undo-undo lifesaver |
-| `git clean -fd` | Remove untracked files |
+| `git log --oneline --graph --all` | ブランチの見える化 |
+| `git stash && git stash pop` | パーク + 復元作業 |
+| `git reset --soft HEAD~1` | 最終コミットを解禁 | 変更 |
+| `git rebase -i HEAD~3` | 最終3コミットを書き換える |
+| `git bisect start` | バイナリー検索 バグコミ |
+| `git reflog` | 無人ライフセーバー |
+| `git clean -fd` | 追跡されていないファイルを削除します |
 
-## 🐚 Shell
+## 🐚 シェル
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `cmd1 && cmd2` | Run 2 only if 1 succeeds |
-| `cmd | tee file` | Print AND save output |
-| `cmd > out 2>&1` | Redirect stderr to stdout |
-| `Ctrl-A / Ctrl-E` | Line start / end |
-| `!cmd` | Re-run last matching command |
-| `for f in *.log; do mv "$f" "$f.bak"; done` | Loop over files |
+| `cmd1 && cmd2` | 1 が成功した場合のみ 2 を実行 |
+| `cmd | tee file` | 印刷・保存 |
+| `cmd > out 2>&1` | `cmd > out 2>&1` | スタッダをダイレクト |
+| `Ctrl-A / Ctrl-E` | ラインスタート | 終了 |
+| `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | `!cmd` | 最後のマッチングを再開 |
+| `for f in *.log; do mv "$f" "$f.bak"; done` | ファイルのループ |
 
-## 🌐 curl
+## バスケットカール
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `curl -s url | jq .` | Fetch + parse JSON |
-| `curl -X POST -d '{"a":1}' -H 'Content-Type: json'` | POST body |
-| `curl -o file url` | Download |
-| `curl -v url` | Debug the request |
-| `curl --retry 5 url` | Auto-retry |
+| `curl -s url | jq .` | フェッチ+パーズ JSON |
+| `curl -X POST -d '{"a":1}' -H 'Content-Type: json'` | POSTボディ |
+| `curl -o file url` | ダウンロード |
+| `curl -v url` | リクエストをデバッグ |
+| `curl --retry 5 url` | オートリトリー |
 
-## 🐍 Python one-liners
+## パイソンワンライナー
 
-| Snippet | What |
+| スニペット | 何 |
 |---|---|
-| `python3 -m http.server 8000` | Instant file server |
-| `python3 -m json.tool < data.json` | Pretty-print JSON |
-| `[x*2 for x in range(10)]` | List comprehension |
-| `dict(zip(keys, vals))` | Zip to dict |
+| `python3 -m http.server 8000` | インスタントファイルサーバ |
+| `python3 -m json.tool < data.json` | プリプリントJSON |
+| `[x*2 for x in range(10)]` | リストアップ |
+| `dict(zip(keys, vals))` | ジップ・トゥ・ディクト |
 
-## 🔐 Security quickies
+## 🔐 セキュリティ クイック
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `ss -tulpn` | What's listening |
-| `openssl s_client -connect host:443` | TLS handshake debug |
-| `hashcat -m 0 hash rockyou.txt` | Crack MD5 |
-| `john --wordlist=w.txt hash` | John the Ripper |
-| `shasum -a 256 file` | Checksum |
+| `ss -tulpn` | お客様の声 |
+| `openssl s_client -connect host:443` | TLSハンドシェイクデバッグ |
+| `hashcat -m 0 hash rockyou.txt` | 亀裂 MD5 |
+| `john --wordlist=w.txt hash` | ジョン・リッパー |
+| `shasum -a 256 file` | チェックサム |
 
-## 🐳 Docker
+## スタッフ
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `docker ps -a` | All containers |
-| `docker exec -it c bash` | Shell inside |
-| `docker logs -f c` | Follow logs |
-| `docker system prune -af` | Nuclear cleanup |
-| `docker stats` | Live resource usage |
-| `docker run --rm -it img` | Ephemeral container |
+| `docker ps -a` | すべての容器 |
+| `docker exec -it c bash` | シェルインサイド |
+| `docker logs -f c` | フォローログ |
+| `docker system prune -af` | 核クリーンアップ |
+| `docker stats` | ライブリソース利用 |
+| `docker run --rm -it img` | エフェメラルド容器 |
 
-## 🧵 Git advanced
+## 🧵 Git 高度な
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `git worktree add ../wt branch` | Second checkout, same repo |
-| `git cherry-pick abc123` | Take one commit |
-| `git branch -m old new` | Rename |
-| `git diff main...feature` | Three-dot = since divergence |
-| `git commit --fixup abc && git rebase -i --autosquash` | Clean history fix |
-| `git push --force-with-lease` | Safer force push |
+| `git worktree add ../wt branch` | 二次チェックアウト |
+| `git cherry-pick abc123` | 1 コミット |
+| `git branch -m old new` | 名前 |
+| `git diff main...feature` | 三点=卒業後 |
+| `git commit --fixup abc && git rebase -i --autosquash` | クリーンな歴史の修正 |
+| `git push --force-with-lease` | 安全力プッシュ |
 
-## 🔍 ripgrep superpowers
+# # # 既定の ripgrep スーパーパワー
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `rg -t py "import pandas"` | Type-filtered search |
-| `rg -l "TODO" | wc -l` | Count files with TODOs |
-| `rg "fn\w+" -A3` | Context after match |
-| `rg --files-without-match "test"` | Files lacking something |
+| `rg -t py "import pandas"` | タイプ フィルター検索 |
+| `rg -l "TODO" | wc -l` | TODOファイル数 |
+| `rg "fn\w+" -A3` | 試合後のコンテキスト |
+| `rg --files-without-match "test"` | 何か欠けているファイル |
 
-## 📊 Regex
+## 正規表現
 
-| Pattern | Matches |
+| パターン | マッチ |
 |---|---|
-| `(?<=@)\w+` | After @ (lookbehind) |
-| `\w+@\w+\.\w+` | Emails |
-| `(\d{1,3}\.){3}\d{1,3}` | IPv4 addresses |
-| `(?=.*[A-Z])(?=.*\d).{8,}` | Password validator |
+| `(?<=@)\w+` | アフター@(外観) |
+| `\w+@\w+\.\w+` | メール |
+| `(\d{1,3}\.){3}\d{1,3}` | IPv4アドレス |
+| `(?=.*[A-Z])(?=.*\d).{8,}` | パスワードバリデータ |
 
-## 🗄️ SQLite
+## ️️ SQLite
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `.tables` | List tables |
-| `.schema tbl` | Table DDL |
-| `.mode column` | Readable output |
-| `.dump` | Export everything |
+| `.tables` | リストテーブル |
+| `.schema tbl` | テーブル DDL |
+| `.mode column` | 読みやすい出力 |
+| `.dump` | 全てをエクスポート |
 
 ---
 ## 貢献
