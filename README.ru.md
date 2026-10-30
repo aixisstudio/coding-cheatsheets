@@ -4,110 +4,108 @@
 
 Шпаргалки для разработчиков, которыми реально пользуются
 
-_Подробное содержимое (списки, ссылки, описания) ведётся на английском — разделы ниже помогут сориентироваться._
+##   Читы, которые действительно используются
 
-## 📋 Cheat sheets that actually get used
+## it Git
 
-## 🌿 Git
-
-| Command | What |
+Командир, что такое
 |---|---|
-| `git log --oneline --graph --all` | Visualize branches |
-| `git stash && git stash pop` | Park + restore work |
-| `git reset --soft HEAD~1` | Undo last commit, keep changes |
-| `git rebase -i HEAD~3` | Rewrite last 3 commits |
+| `git log --oneline --graph --all` | Визуальные ветви
+| `git stash && git stash pop` | Парк + восстановительные работы
+`git reset --soft HEAD~1` Отменить последнее обязательство, сохранить изменения
+`git rebase -i HEAD~3` Переписать последние 3 обязательства
 | `git bisect start` | Binary-search the bug commit |
-| `git reflog` | The undo-undo lifesaver |
-| `git clean -fd` | Remove untracked files |
+↑ `git reflog` | The undo-undo lifesaver[править править код]
+| `git clean -fd` | Удалить неотслеживаемые файлы |
 
-## 🐚 Shell
+##Шелл
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `cmd1 && cmd2` | Run 2 only if 1 succeeds |
-| `cmd | tee file` | Print AND save output |
-| `cmd > out 2>&1` | Redirect stderr to stdout |
-| `Ctrl-A / Ctrl-E` | Line start / end |
-| `!cmd` | Re-run last matching command |
-| `for f in *.log; do mv "$f" "$f.bak"; done` | Loop over files |
+| `cmd1 && cmd2` | Запуск 2 только в случае успеха 1 |
+| `cmd | tee file` | Печать и сохранение вывода |
+| `cmd > out 2>&1` | Перенаправить stderr на stdout |
+| `Ctrl-A / Ctrl-E` | Начало/конец строки
+| `!cmd` | Перезапуск последней соответствующей команды |
+`for f in *.log; do mv "$f" "$f.bak"; done` - Loop over Files
 
-## 🌐 curl
+##   завиток
 
-| Command | What |
+Командир, что такое
 |---|---|
 | `curl -s url | jq .` | Fetch + parse JSON |
-| `curl -X POST -d '{"a":1}' -H 'Content-Type: json'` | POST body |
-| `curl -o file url` | Download |
-| `curl -v url` | Debug the request |
-| `curl --retry 5 url` | Auto-retry |
+`curl -X POST -d '{"a":1}' -H 'Content-Type: json'` | POST body |
+| `curl -o file url` | Скачать
+`curl -v url` Отладка запроса
+`curl --retry 5 url` - Автозапуск
 
-## 🐍 Python one-liners
+## - Python one-liners
 
-| Snippet | What |
+Обсуждение Snippet What
 |---|---|
-| `python3 -m http.server 8000` | Instant file server |
-| `python3 -m json.tool < data.json` | Pretty-print JSON |
-| `[x*2 for x in range(10)]` | List comprehension |
+`python3 -m http.server 8000` - Мгновенный файловый сервер
+`python3 -m json.tool < data.json` Pretty-print JSON
+| `[x*2 for x in range(10)]` | Понимание списка |
 | `dict(zip(keys, vals))` | Zip to dict |
 
-## 🔐 Security quickies
+##Безопасность быстро
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `ss -tulpn` | What's listening |
-| `openssl s_client -connect host:443` | TLS handshake debug |
-| `hashcat -m 0 hash rockyou.txt` | Crack MD5 |
-| `john --wordlist=w.txt hash` | John the Ripper |
-| `shasum -a 256 file` | Checksum |
+`ss -tulpn` - Что слушать
+| `openssl s_client -connect host:443` | Отладка рукопожатия TLS |
+`hashcat -m 0 hash rockyou.txt` - Crack MD5
+Оригинальное название: John the Ripper
+`shasum -a 256 file` | Checksum |
 
-## 🐳 Docker
+##   Докер
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `docker ps -a` | All containers |
-| `docker exec -it c bash` | Shell inside |
-| `docker logs -f c` | Follow logs |
-| `docker system prune -af` | Nuclear cleanup |
-| `docker stats` | Live resource usage |
-| `docker run --rm -it img` | Ephemeral container |
+`docker ps -a` Все контейнеры
+`docker exec -it c bash` - оболочка внутри
+| `docker logs -f c` | Следуйте за журналами |
+`docker system prune -af` - Ядерная очистка
+| `docker stats` | Использование живых ресурсов
+| `docker run --rm -it img` | Эфемерный контейнер
 
-## 🧵 Git advanced
+##   Продвинутый
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `git worktree add ../wt branch` | Second checkout, same repo |
-| `git cherry-pick abc123` | Take one commit |
-| `git branch -m old new` | Rename |
-| `git diff main...feature` | Three-dot = since divergence |
-| `git commit --fixup abc && git rebase -i --autosquash` | Clean history fix |
-| `git push --force-with-lease` | Safer force push |
+| `git worktree add ../wt branch` | Вторая проверка, тот же РЕПО |
+`git cherry-pick abc123` - Take one commit
+| `git branch -m old new` | Переименование
+| `git diff main...feature` | Три точки = с момента расхождения |
+`git commit --fixup abc && git rebase -i --autosquash` - Чистая история
+`git push --force-with-lease` Безопасный толчок
 
-## 🔍 ripgrep superpowers
+##   суперспособности
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `rg -t py "import pandas"` | Type-filtered search |
-| `rg -l "TODO" | wc -l` | Count files with TODOs |
-| `rg "fn\w+" -A3` | Context after match |
-| `rg --files-without-match "test"` | Files lacking something |
+| `rg -t py "import pandas"` | Отфильтрованный по типу поиск |
+| `rg -l "TODO" | wc -l` | Счет файлов с TODO
+`rg "fn\w+" -A3` - контекст после матча
+`rg --files-without-match "test"` - файлы, в которых чего-то не хватает
 
-## 📊 Regex
+##   Регекс
 
-| Pattern | Matches |
+Обсуждение Pattern | Matches
 |---|---|
-| `(?<=@)\w+` | After @ (lookbehind) |
-| `\w+@\w+\.\w+` | Emails |
-| `(\d{1,3}\.){3}\d{1,3}` | IPv4 addresses |
-| `(?=.*[A-Z])(?=.*\d).{8,}` | Password validator |
+| `(?<=@)\w+` | После @ (см. ниже)
+`\w+@\w+\.\w+` - Электронная почта
+| `(\d{1,3}\.){3}\d{1,3}` | IPv4 адреса
+| `(?=.*[A-Z])(?=.*\d).{8,}` | Валидатор паролей
 
-## 🗄️ SQLite
+##  ️ SQLite
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `.tables` | List tables |
-| `.schema tbl` | Table DDL |
-| `.mode column` | Readable output |
-| `.dump` | Export everything |
+| `.tables` | Таблицы списков |
+| `.schema tbl` | Таблица DDL
+| `.mode column` | Readable output
+`.dump` Экспортировать все
 
 ---
 ## Участие
